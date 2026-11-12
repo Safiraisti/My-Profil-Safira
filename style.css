@@ -1,0 +1,328 @@
+
+/* =====================================
+   1. PENGATURAN DASAR
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fdf5f3;
+    color: #604b4d;
+    line-height: 1.7;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+
+/* =====================================
+   2. HEADER / BAGIAN PROFIL
+===================================== */
+
+header {
+    background: linear-gradient(
+        135deg,
+        #bd8589,
+        #d9a5a8,
+        #edc6c5
+    );
+
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.foto-profil {
+    width: 155px;
+    height: 155px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 18px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+header p {
+    margin: 5px 0;
+}
+
+
+/* =====================================
+   3. TOMBOL INTERAKTIF
+===================================== */
+
+button {
+    border: none;
+    border-radius: 25px;
+    padding: 11px 22px;
+    background-color: #a86f75;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 7px 4px;
+}
+
+button:hover {
+    background-color: #805157;
+    transform: translateY(-2px);
+}
+
+.tombol-header {
+    background-color: white;
+    color: #a86f75;
+    margin-top: 15px;
+}
+
+.tombol-header:hover {
+    background-color: #f9e6e5;
+}
+
+
+/* =====================================
+   4. NAVIGASI
+===================================== */
+
+nav {
+    background-color: #fffafa;
+    padding: 16px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 10px rgba(100, 60, 60, 0.08);
+}
+
+nav a {
+    color: #a86f75;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 13px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #70454a;
+}
+
+
+/* =====================================
+   5. KONTEN UTAMA
+===================================== */
+
+main {
+    max-width: 1050px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: #fffafa;
+    margin-bottom: 25px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(100, 60, 60, 0.07);
+    scroll-margin-top: 85px;
+}
+
+section h2 {
+    color: #a86f75;
+    margin-bottom: 18px;
+    padding-left: 12px;
+    border-left: 5px solid #d9a5a8;
+}
+
+section p {
+    text-align: justify;
+    margin-bottom: 12px;
+}
+
+
+/* =====================================
+   6. INFORMASI TAMBAHAN
+===================================== */
+
+.kotak-info {
+    background-color: #fae9e7;
+    border-left: 5px solid #c98f94;
+    padding: 18px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.tersembunyi {
+    display: none;
+}
+
+
+/* =====================================
+   7. TABEL PENDIDIKAN
+===================================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    background-color: #c98f94;
+    color: white;
+    padding: 13px;
+    text-align: left;
+}
+
+td {
+    padding: 13px;
+    border-bottom: 1px solid #ead5d3;
+}
+
+tr:nth-child(even) {
+    background-color: #fdf0ef;
+}
+
+
+/* =====================================
+   8. DAFTAR KEAHLIAN
+===================================== */
+
+.daftar-keahlian {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.daftar-keahlian li {
+    background-color: #f8e9e7;
+    border: 1px solid #e7c6c4;
+    color: #885c60;
+    padding: 14px;
+    border-radius: 10px;
+}
+
+
+/* =====================================
+   9. PENGALAMAN ORGANISASI
+===================================== */
+
+.pengalaman {
+    padding-left: 25px;
+}
+
+.pengalaman li {
+    margin-bottom: 12px;
+}
+
+
+/* =====================================
+   10. TUJUAN KARIER
+===================================== */
+
+.tujuan-karier {
+    background-color: #fae9e7;
+    padding: 20px;
+    border-left: 5px solid #c98f94;
+    border-radius: 10px;
+}
+
+
+/* =====================================
+   11. FOOTER
+===================================== */
+
+footer {
+    background-color: #755155;
+    color: #fff7f5;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+
+/* =====================================
+   12. MODE GELAP
+===================================== */
+
+body.mode-gelap {
+    background-color: #292326;
+    color: #f4e5e5;
+}
+
+body.mode-gelap nav,
+body.mode-gelap section {
+    background-color: #3b3035;
+    color: #f4e5e5;
+}
+
+body.mode-gelap nav a,
+body.mode-gelap section h2 {
+    color: #edb9bd;
+}
+
+body.mode-gelap .kotak-info,
+body.mode-gelap .tujuan-karier {
+    background-color: #514047;
+    color: #fff0f0;
+}
+
+body.mode-gelap .daftar-keahlian li {
+    background-color: #514047;
+    color: #ffe2e3;
+    border-color: #74545c;
+}
+
+body.mode-gelap td {
+    color: #f4e5e5;
+    border-color: #66515a;
+}
+
+body.mode-gelap tr:nth-child(even) {
+    background-color: #493a41;
+}
+
+
+/* =====================================
+   13. RESPONSIVE / TAMPILAN HP
+===================================== */
+
+@media (max-width: 650px) {
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    nav a {
+        margin: 5px 7px;
+        font-size: 13px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .daftar-keahlian {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+}
