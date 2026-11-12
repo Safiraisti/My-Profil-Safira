@@ -166,6 +166,39 @@
             border-radius: 10px;
         }
 
+        /* MEDIA SOSIAL */
+        .daftar-sosmed {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .kartu-sosmed {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 4px;
+            padding: 22px 15px;
+            background-color: #f8e9e7;
+            border: 1px solid #e7c6c4;
+            border-radius: 12px;
+            color: #885c60;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .kartu-sosmed:hover {
+            background-color: #f2d6d4;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(100,60,60,0.12);
+        }
+
+        .kartu-sosmed .ikon { font-size: 32px; }
+        .kartu-sosmed strong { font-size: 17px; }
+        .kartu-sosmed span { font-size: 14px; }
+
         /* FOOTER */
         footer {
             background-color: #755155;
@@ -187,11 +220,14 @@
         body.mode-gelap .kotak-info,
         body.mode-gelap .tujuan-karier { background-color: #514047; color: #fff0f0; }
 
-        body.mode-gelap .daftar-keahlian li {
+        body.mode-gelap .daftar-keahlian li,
+        body.mode-gelap .kartu-sosmed {
             background-color: #514047;
             color: #ffe2e3;
             border-color: #74545c;
         }
+
+        body.mode-gelap .kartu-sosmed:hover { background-color: #624d55; }
 
         body.mode-gelap td { color: #f4e5e5; border-color: #66515a; }
 
@@ -203,6 +239,7 @@
             nav a { margin: 5px 7px; font-size: 13px; }
             section { padding: 20px; }
             .daftar-keahlian { grid-template-columns: 1fr; }
+            .daftar-sosmed { grid-template-columns: 1fr; }
             table { font-size: 12px; }
         }
     </style>
@@ -234,6 +271,7 @@
         <a href="#keahlian">Keahlian</a>
         <a href="#organisasi">Organisasi</a>
         <a href="#karier">Karier</a>
+        <a href="#sosmed">Media Sosial</a>
     </nav>
 
 
@@ -393,6 +431,47 @@
 
         </section>
 
+
+        <!-- MEDIA SOSIAL -->
+        <section id="sosmed">
+
+            <h2>Media Sosial</h2>
+
+            <p>
+                Yuk terhubung dengan saya! Klik salah satu tombol
+                di bawah untuk membuka profil saya.
+            </p>
+
+            <div class="daftar-sosmed">
+
+                <a class="kartu-sosmed"
+                   href="https://www.instagram.com/safiradis_?srtk=bzRpbXpmenpycmcx"
+                   target="_blank" rel="noopener noreferrer">
+                    <div class="ikon">📸</div>
+                    <strong>Instagram</strong>
+                    <span>@safiradis_</span>
+                </a>
+
+                <a class="kartu-sosmed"
+                   href="https://www.tiktok.com/@safiradis_?is_from_webapp=1&sender_device=pc"
+                   target="_blank" rel="noopener noreferrer">
+                    <div class="ikon">🎵</div>
+                    <strong>TikTok</strong>
+                    <span>@safiradis_</span>
+                </a>
+
+                <a class="kartu-sosmed"
+                   href="https://www.threads.com/@safiradis_"
+                   target="_blank" rel="noopener noreferrer">
+                    <div class="ikon">🧵</div>
+                    <strong>Threads</strong>
+                    <span>@safiradis_</span>
+                </a>
+
+            </div>
+
+        </section>
+
     </main>
 
 
@@ -407,7 +486,7 @@
     </footer>
 
 
-    <!-- JAVASCRIPT (sudah menyatu di file ini) -->
+    <!-- JAVASCRIPT -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
 
