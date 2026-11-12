@@ -1,3 +1,586 @@
-# My-Profil-Safira
-haii! aku safira ini adalah profil aku menggunakan HTML,CSS,JV.SCIPT, Safira Isti Radisya Putri Kusmainda(A12.2025.07324) kelas (A12.6302)
-Tugas 3
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profil Pribadi Safira</title>
+
+    <style>
+        /* PENGATURAN DASAR */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdf5f3;
+            color: #604b4d;
+            line-height: 1.7;
+            transition: background-color 0.4s, color 0.4s;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #bd8589, #d9a5a8, #edc6c5);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .foto-profil {
+            width: 155px;
+            height: 155px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 7px 20px rgba(0,0,0,0.2);
+            margin-bottom: 18px;
+        }
+
+        header h1 { font-size: 32px; margin-bottom: 8px; }
+        header p { margin: 5px 0; }
+
+        /* TOMBOL */
+        button {
+            border: none;
+            border-radius: 25px;
+            padding: 11px 22px;
+            background-color: #a86f75;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 7px 4px;
+        }
+
+        button:hover {
+            background-color: #805157;
+            transform: translateY(-2px);
+        }
+
+        .tombol-header {
+            background-color: white;
+            color: #a86f75;
+            margin-top: 15px;
+        }
+
+        .tombol-header:hover { background-color: #f9e6e5; }
+
+        /* NAVIGASI */
+        nav {
+            background-color: #fffafa;
+            padding: 16px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 10px rgba(100,60,60,0.08);
+        }
+
+        nav a {
+            color: #a86f75;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 13px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #70454a; }
+
+        /* KONTEN */
+        main { max-width: 1050px; margin: 40px auto; padding: 0 20px; }
+
+        section {
+            background-color: #fffafa;
+            margin-bottom: 25px;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 18px rgba(100,60,60,0.07);
+            scroll-margin-top: 85px;
+        }
+
+        section h2 {
+            color: #a86f75;
+            margin-bottom: 18px;
+            padding-left: 12px;
+            border-left: 5px solid #d9a5a8;
+        }
+
+        section p { text-align: justify; margin-bottom: 12px; }
+
+        /* INFORMASI TAMBAHAN */
+        .kotak-info {
+            background-color: #fae9e7;
+            border-left: 5px solid #c98f94;
+            padding: 18px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .tersembunyi { display: none; }
+
+        /* TABEL PENDIDIKAN */
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+
+        th {
+            background-color: #c98f94;
+            color: white;
+            padding: 13px;
+            text-align: left;
+        }
+
+        td { padding: 13px; border-bottom: 1px solid #ead5d3; }
+
+        tr:nth-child(even) { background-color: #fdf0ef; }
+
+        /* KEAHLIAN */
+        .daftar-keahlian {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .daftar-keahlian li {
+            background-color: #f8e9e7;
+            border: 1px solid #e7c6c4;
+            color: #885c60;
+            padding: 14px;
+            border-radius: 10px;
+        }
+
+        /* ORGANISASI */
+        .pengalaman { padding-left: 25px; }
+        .pengalaman li { margin-bottom: 12px; }
+
+        /* KARIER */
+        .tujuan-karier {
+            background-color: #fae9e7;
+            padding: 20px;
+            border-left: 5px solid #c98f94;
+            border-radius: 10px;
+        }
+
+        /* MEDIA SOSIAL */
+        .daftar-sosmed {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .kartu-sosmed {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 4px;
+            padding: 22px 15px;
+            background-color: #f8e9e7;
+            border: 1px solid #e7c6c4;
+            border-radius: 12px;
+            color: #885c60;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .kartu-sosmed:hover {
+            background-color: #f2d6d4;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(100,60,60,0.12);
+        }
+
+        .kartu-sosmed .ikon { font-size: 32px; }
+        .kartu-sosmed strong { font-size: 17px; }
+        .kartu-sosmed span { font-size: 14px; }
+
+        /* FOOTER */
+        footer {
+            background-color: #755155;
+            color: #fff7f5;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        /* MODE GELAP */
+        body.mode-gelap { background-color: #292326; color: #f4e5e5; }
+
+        body.mode-gelap nav,
+        body.mode-gelap section { background-color: #3b3035; color: #f4e5e5; }
+
+        body.mode-gelap nav a,
+        body.mode-gelap section h2 { color: #edb9bd; }
+
+        body.mode-gelap .kotak-info,
+        body.mode-gelap .tujuan-karier { background-color: #514047; color: #fff0f0; }
+
+        body.mode-gelap .daftar-keahlian li,
+        body.mode-gelap .kartu-sosmed {
+            background-color: #514047;
+            color: #ffe2e3;
+            border-color: #74545c;
+        }
+
+        body.mode-gelap .kartu-sosmed:hover { background-color: #624d55; }
+
+        body.mode-gelap td { color: #f4e5e5; border-color: #66515a; }
+
+        body.mode-gelap tr:nth-child(even) { background-color: #493a41; }
+
+        /* RESPONSIVE */
+        @media (max-width: 650px) {
+            header h1 { font-size: 25px; }
+            nav a { margin: 5px 7px; font-size: 13px; }
+            section { padding: 20px; }
+            .daftar-keahlian { grid-template-columns: 1fr; }
+            .daftar-sosmed { grid-template-columns: 1fr; }
+            table { font-size: 12px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <img src="fotoprofil.jpg" alt="Foto Profil Safira" class="foto-profil">
+
+        <h1>Safira Isti Radisya Putri Kusmainda</h1>
+
+        <p>Mahasiswi Sistem Informasi</p>
+        <p>Fakultas Komputer</p>
+        <p>Anggota Himpunan Mahasiswa Sistem Informasi (HMSISFO)</p>
+
+        <button class="tombol-header" id="tombolSapa">Sapa Saya ♡</button>
+        <button class="tombol-header" id="tombolTema">🌙 Mode Gelap</button>
+
+    </header>
+
+
+    <!-- NAVIGASI -->
+    <nav>
+        <a href="#tentang">Tentang Saya</a>
+        <a href="#pendidikan">Pendidikan</a>
+        <a href="#keahlian">Keahlian</a>
+        <a href="#organisasi">Organisasi</a>
+        <a href="#karier">Karier</a>
+        <a href="#sosmed">Media Sosial</a>
+    </nav>
+
+
+    <!-- KONTEN UTAMA -->
+    <main>
+
+        <!-- TENTANG SAYA -->
+        <section id="tentang">
+
+            <h2>Tentang Saya</h2>
+
+            <p>
+                Saya adalah seorang mahasiswi Sistem Informasi,
+                Fakultas Komputer, yang memiliki ketertarikan pada
+                bidang teknologi informasi, pengembangan sistem,
+                komunikasi, dan pelayanan kepada pengguna.
+            </p>
+
+            <p>
+                Selain menjalani kegiatan akademik, saya juga aktif
+                sebagai anggota Himpunan Mahasiswa Sistem Informasi
+                (HMSISFO). Melalui kegiatan organisasi, saya dapat
+                mengembangkan kemampuan komunikasi, kerja sama tim,
+                tanggung jawab, serta manajemen waktu.
+            </p>
+
+            <button id="tombolInfo">Selengkapnya</button>
+
+            <div id="informasi-lengkap" class="kotak-info tersembunyi">
+
+                <h3>Informasi Tambahan</h3>
+
+                <p>
+                    Saya senang bersosialisasi, bertemu orang baru,
+                    dan mempelajari hal-hal baru. Saya juga berusaha
+                    menjadi pribadi yang teliti, bertanggung jawab,
+                    serta mampu bekerja sama dengan orang lain.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PENDIDIKAN -->
+        <section id="pendidikan">
+
+            <h2>Riwayat Pendidikan</h2>
+
+            <p>Berikut merupakan riwayat pendidikan saya:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Jenjang</th>
+                        <th>Nama Institusi</th>
+                        <th>Tahun</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Perguruan Tinggi</td>
+                        <td>Universitas Dian Nuswantoro</td>
+                        <td>2026 - Sekarang</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>SMA/SMK</td>
+                        <td>Isi Nama Sekolah</td>
+                        <td>Isi Tahun</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+
+        <!-- KEAHLIAN -->
+        <section id="keahlian">
+
+            <h2>Keahlian</h2>
+
+            <p>
+                Beberapa kemampuan yang saya kembangkan selama
+                menjalani kegiatan akademik dan organisasi:
+            </p>
+
+            <button id="tombolKeahlian">Tampilkan Keahlian</button>
+
+            <div id="daftar-keahlian" class="tersembunyi">
+
+                <ul class="daftar-keahlian">
+                    <li>Komunikasi</li>
+                    <li>Kerja Sama Tim</li>
+                    <li>Manajemen Waktu</li>
+                    <li>Ketelitian</li>
+                    <li>Tanggung Jawab</li>
+                    <li>Pengoperasian Komputer</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORGANISASI -->
+        <section id="organisasi">
+
+            <h2>Pengalaman Organisasi</h2>
+
+            <ul class="pengalaman">
+
+                <li>
+                    <strong>Himpunan Mahasiswa Sistem Informasi (HMSISFO)</strong>
+                    <br>
+                    Anggota organisasi mahasiswa Sistem Informasi.
+                </li>
+
+                <li>
+                    <strong>Kegiatan Kepanitiaan</strong>
+                    <br>
+                    Terlibat dalam kegiatan organisasi dan membantu
+                    pelaksanaan kegiatan kepanitiaan.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- KARIER -->
+        <section id="karier">
+
+            <h2>Tujuan Karier</h2>
+
+            <div class="tujuan-karier">
+
+                <p>
+                    Saya memiliki ketertarikan untuk mengembangkan
+                    karier di bidang teknologi informasi, khususnya
+                    pekerjaan yang berkaitan dengan pelayanan
+                    pelanggan (Customer Service).
+                </p>
+
+                <p>
+                    Saya ingin terus meningkatkan kemampuan komunikasi,
+                    pemecahan masalah, dan pemahaman teknologi agar
+                    dapat memberikan pelayanan yang baik serta
+                    membantu memenuhi kebutuhan pengguna.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- MEDIA SOSIAL -->
+        <section id="sosmed">
+
+            <h2>Media Sosial</h2>
+
+            <p>
+                Yuk terhubung dengan saya! Klik salah satu tombol
+                di bawah untuk membuka profil saya.
+            </p>
+
+            <div class="daftar-sosmed">
+
+                <a class="kartu-sosmed"
+                   href="https://www.instagram.com/safiradis_?srtk=bzRpbXpmenpycmcx"
+                   target="_blank" rel="noopener noreferrer">
+                    <div class="ikon">📸</div>
+                    <strong>Instagram</strong>
+                    <span>@safiradis_</span>
+                </a>
+
+                <a class="kartu-sosmed"
+                   href="https://www.tiktok.com/@safiradis_?is_from_webapp=1&sender_device=pc"
+                   target="_blank" rel="noopener noreferrer">
+                    <div class="ikon">🎵</div>
+                    <strong>TikTok</strong>
+                    <span>@safiradis_</span>
+                </a>
+
+                <a class="kartu-sosmed"
+                   href="https://www.threads.com/@safiradis_"
+                   target="_blank" rel="noopener noreferrer">
+                    <div class="ikon">🧵</div>
+                    <strong>Threads</strong>
+                    <span>@safiradis_</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p><strong>Safira Isti Radisya Putri Kusmainda</strong></p>
+        <p>Mahasiswi Sistem Informasi - Fakultas Komputer</p>
+        <p>© 2026 Profil Pribadi. All Rights Reserved.</p>
+        <p>Terima kasih sudah mengunjungi halaman profil saya ♡</p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            /* 1. TOMBOL "SAPA SAYA" */
+            const tombolSapa = document.getElementById("tombolSapa");
+
+            tombolSapa.addEventListener("click", function () {
+                const jam = new Date().getHours();
+                let sapaan;
+
+                if (jam >= 4 && jam < 11) {
+                    sapaan = "Selamat pagi";
+                } else if (jam >= 11 && jam < 15) {
+                    sapaan = "Selamat siang";
+                } else if (jam >= 15 && jam < 18) {
+                    sapaan = "Selamat sore";
+                } else {
+                    sapaan = "Selamat malam";
+                }
+
+                alert(sapaan + "! Terima kasih sudah berkunjung ke profil saya ♡");
+            });
+
+
+            /* 2. TOMBOL MODE GELAP / TERANG */
+            const tombolTema = document.getElementById("tombolTema");
+
+            function aturTema(gelap) {
+                document.body.classList.toggle("mode-gelap", gelap);
+                tombolTema.textContent = gelap ? "☀️ Mode Terang" : "🌙 Mode Gelap";
+
+                try {
+                    localStorage.setItem("temaProfil", gelap ? "gelap" : "terang");
+                } catch (e) { /* abaikan */ }
+            }
+
+            try {
+                if (localStorage.getItem("temaProfil") === "gelap") {
+                    aturTema(true);
+                }
+            } catch (e) { /* abaikan */ }
+
+            tombolTema.addEventListener("click", function () {
+                aturTema(!document.body.classList.contains("mode-gelap"));
+            });
+
+
+            /* 3. TOMBOL "SELENGKAPNYA" */
+            const tombolInfo = document.getElementById("tombolInfo");
+            const informasiLengkap = document.getElementById("informasi-lengkap");
+
+            tombolInfo.addEventListener("click", function () {
+                const tersembunyi = informasiLengkap.classList.toggle("tersembunyi");
+                tombolInfo.textContent = tersembunyi ? "Selengkapnya" : "Sembunyikan";
+            });
+
+
+            /* 4. TOMBOL "TAMPILKAN KEAHLIAN" */
+            const tombolKeahlian = document.getElementById("tombolKeahlian");
+            const daftarKeahlian = document.getElementById("daftar-keahlian");
+
+            tombolKeahlian.addEventListener("click", function () {
+                const tersembunyi = daftarKeahlian.classList.toggle("tersembunyi");
+                tombolKeahlian.textContent = tersembunyi
+                    ? "Tampilkan Keahlian"
+                    : "Sembunyikan Keahlian";
+            });
+
+
+            /* 5. MENU NAVIGASI AKTIF SAAT SCROLL */
+            const bagian = document.querySelectorAll("main section");
+            const linkNav = document.querySelectorAll("nav a");
+
+            function tandaiMenuAktif() {
+                let idAktif = "";
+
+                bagian.forEach(function (sec) {
+                    if (window.scrollY >= sec.offsetTop - 140) {
+                        idAktif = sec.id;
+                    }
+                });
+
+                linkNav.forEach(function (link) {
+                    const aktif = link.getAttribute("href") === "#" + idAktif;
+                    link.style.textDecoration = aktif ? "underline" : "none";
+                    link.style.textUnderlineOffset = "6px";
+                });
+            }
+
+            window.addEventListener("scroll", tandaiMenuAktif);
+            tandaiMenuAktif();
+
+        });
+    </script>
+
+</body>
+</html>
